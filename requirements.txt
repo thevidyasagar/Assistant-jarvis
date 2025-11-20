@@ -1,0 +1,7 @@
+sounddevice
+wavio
+openai
+openai-whisper
+pyttsx3
+pvporcupine
+pyaudio
