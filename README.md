@@ -1,97 +1,143 @@
- ### Jarvis Desktop Voice Assistant
+Jarvis Desktop Voice Assistant
 
-A personal desktop voice assistant inspired by Iron Man’s Jarvis. It listens for a wake word, processes voice commands, and performs tasks like opening apps, searching the web, telling the time, and more.
+A clean and modular Python voice assistant inspired by Jarvis.
+It listens for a wake word, understands your command, and performs tasks on your system.
 
-Features
+🎨 Project Preview
+📌 Features
+• Wake Word Activation
 
-• Wake word detection using Porcupine
-• Speech recognition
-• Text to speech responses
-• System automation like opening apps and websites
-• Custom commands
-• Modular structure for easy updates
-• Cross-platform Python support
-• Future support planned for GUI (Jarvis-style HUD)
+Listens continuously until the wake word is spoken.
 
-Tech Stack
+• Speech Recognition
 
-• Python
-• Porcupine (Wake word engine)
-• SpeechRecognition
-• Pyttsx3 or any TTS engine
-• Qt for optional GUI
-• Custom command modules
+Understands commands using STT.
 
-Installation
+• Natural Voice Replies
 
-Clone the project
+Responds using a built-in TTS engine.
 
+• App and Website Automation
+
+Open apps, run system tools, search the web.
+
+• Modular Command System
+
+Add new skills easily by editing one file.
+
+• Optional Futuristic GUI
+
+A Jarvis-style animated UI (under development).
+
+🛠️ Tech Stack
+Component	Used
+Voice Wake Engine	Porcupine
+Speech to Text	SpeechRecognition
+Text to Speech	Pyttsx3
+Audio Input	PyAudio
+UI (optional)	PyQt
+Language	Python
+
+🚀 Installation Guide
+1. Clone Repository
 git clone https://github.com/thevidyasagar/Assistant-jarvis
 cd jarvis-assistant
 
-
-Create a virtual environment
-
+2. Create Virtual Environment
 python -m venv .venv
-source .venv/Scripts/activate
+.venv\Scripts\activate
 
-
-Install dependencies
-
+3. Install Dependencies
 pip install -r requirements.txt
 
+4. Add Your Wake Word File (.ppn)
 
-Add your Porcupine keyword file (.ppn)
-Place it inside:
+Place it in:
 
 core/wake_engine/
 
-
-Run the assistant
-
+5. Run Jarvis
 python main.py
 
-How It Works
+⚙️ How Jarvis Works
+1. Wake Word Engine Listens
 
-Porcupine listens for the wake word.
+Jarvis wakes up when you say the trigger phrase.
 
-Once triggered, the STT engine converts your speech to text.
+2. Speech Recognition
 
-The command handler checks what you said and matches it with defined actions.
+Your command is converted into text.
 
-The TTS engine replies with a natural voice.
+3. Command Handler
 
-Supported Commands
+The system checks what action matches the command.
 
-Examples you can include:
-• “Open YouTube”
-• “Search for JavaScript tutorials”
-• “What’s the time”
-• “Play music”
-• “Shutdown the system”
-You can add more commands by editing command_handler.py.
+4. Response + Action
 
-Adding New Commands
+Jarvis replies and performs the task.
 
-Inside command_handler.py, add a new function and map it to a keyword. For example:
+🎤 Supported Commands
+System Commands
+
+“Open Chrome”
+
+“Open Notepad”
+
+“Shutdown system”
+
+Information
+
+“What’s the time”
+
+“What’s the date today”
+
+Search
+
+“Search Python tutorials”
+
+“Search weather in Delhi”
+
+Media
+
+“Play music”
+
+➕ Add Your Own Commands
+
+Open: core/command_handler.py
+
+Example:
 
 if "calculator" in command:
-    open_calculator()
+    os.system("calc.exe")
 
-Troubleshooting
 
-• If Porcupine throws a keyword error, check your .ppn file platform.
-• If microphone is not detected, check audio input settings.
-• Windows DPI warning from Qt can be ignored or fixed using qt.conf.
+You can create unlimited commands.
 
-Future Scope
+🔧 Troubleshooting
+Wake Word Not Working
 
-• Full Jarvis-style animated UI
-• Wake word customization
-• Offline mode
-• Integration with home automation
-• Real-time system monitoring widgets
+Check if your .ppn matches Windows.
 
-License
+Microphone Errors
+
+Set default input device in Windows sound settings.
+
+DPI Warning from Qt
+
+Safe to ignore. Can be fixed using qt.conf.
+
+🚧 Future Updates
+
+Animated Jarvis HUD UI
+
+System monitoring widgets
+
+Custom wake words
+
+Offline mode
+
+Home automation support
+
+📄 License
 
 MIT License
