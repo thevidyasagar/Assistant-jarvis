@@ -1,10 +1,10 @@
-Jarvis Desktop Voice Assistant
+### Jarvis Desktop Voice Assistant ###
 
 A clean and modular Python voice assistant inspired by Jarvis.
 It listens for a wake word, understands your command, and performs tasks on your system.
 
-🎨 Project Preview
-📌 Features
+### 🎨 Project Preview  ###
+## 📌 Features ###
 • Wake Word Activation
 
 Listens continuously until the wake word is spoken.
@@ -29,7 +29,7 @@ Add new skills easily by editing one file.
 
 A Jarvis-style animated UI (under development).
 
-🛠️ Tech Stack
+### 🛠️ Tech Stack  ###
 Component	Used
 Voice Wake Engine	Porcupine
 Speech to Text	SpeechRecognition
@@ -38,7 +38,7 @@ Audio Input	PyAudio
 UI (optional)	PyQt
 Language	Python
 
-🚀 Installation Guide
+### 🚀 Installation Guide ###
 1. Clone Repository
 git clone https://github.com/thevidyasagar/Assistant-jarvis
 cd jarvis-assistant
@@ -59,7 +59,7 @@ core/wake_engine/
 5. Run Jarvis
 python main.py
 
-⚙️ How Jarvis Works
+### ⚙️ How Jarvis Works  ###
 1. Wake Word Engine Listens
 
 Jarvis wakes up when you say the trigger phrase.
@@ -101,7 +101,7 @@ Media
 
 “Play music”
 
-➕ Add Your Own Commands
+ ### ➕ Add Your Own Commands ###
 
 Open: core/command_handler.py
 
@@ -126,7 +126,7 @@ DPI Warning from Qt
 
 Safe to ignore. Can be fixed using qt.conf.
 
-🚧 Future Updates
+ ### 🚧 Future Updates ###
 
 Animated Jarvis HUD UI
 
@@ -138,6 +138,6 @@ Offline mode
 
 Home automation support
 
-📄 License
+### 📄 License ###
 
 MIT License
