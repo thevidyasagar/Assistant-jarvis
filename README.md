@@ -1,4 +1,4 @@
-Jarvis Desktop Voice Assistant
+ ### Jarvis Desktop Voice Assistant
 
 A personal desktop voice assistant inspired by Iron Man’s Jarvis. It listens for a wake word, processes voice commands, and performs tasks like opening apps, searching the web, telling the time, and more.
 
@@ -26,7 +26,7 @@ Installation
 
 Clone the project
 
-git clone https://github.com/your-repo/jarvis-assistant
+git clone https://github.com/thevidyasagar/Assistant-jarvis
 cd jarvis-assistant
 
 
