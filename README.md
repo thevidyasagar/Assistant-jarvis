@@ -1,125 +1,97 @@
-📌 Jarvis Assistant – AI Powered Desktop Voice Assistant
+Jarvis Desktop Voice Assistant
 
-Jarvis Assistant एक Python-based desktop voice assistant है।
-ये wake-word detection, speech-to-text, text-to-speech, LLM-based intent handling और HUD UI जैसे features को support करता है।
+A personal desktop voice assistant inspired by Iron Man’s Jarvis. It listens for a wake word, processes voice commands, and performs tasks like opening apps, searching the web, telling the time, and more.
 
-🚀 Features
-✔ Wake-Word Detection
+Features
 
-Porcupine का उपयोग करके “Jarvis” या custom wake-word सुनकर auto-activate होता है।
+• Wake word detection using Porcupine
+• Speech recognition
+• Text to speech responses
+• System automation like opening apps and websites
+• Custom commands
+• Modular structure for easy updates
+• Cross-platform Python support
+• Future support planned for GUI (Jarvis-style HUD)
 
-✔ Speech-to-Text
+Tech Stack
 
-Recorded audio को OpenAI Whisper या अन्य STT models से process करता है।
+• Python
+• Porcupine (Wake word engine)
+• SpeechRecognition
+• Pyttsx3 or any TTS engine
+• Qt for optional GUI
+• Custom command modules
 
-✔ Text-to-Speech
+Installation
 
-Edge-TTS या किसी भी TTS model से natural voice output देता है।
+Clone the project
 
-✔ AI Brain
+git clone https://github.com/your-repo/jarvis-assistant
+cd jarvis-assistant
 
-Core LLM (Groq / OpenAI / Custom model) को use करके intelligent responses और task execution करता है।
 
-✔ RAG Support
+Create a virtual environment
 
-Local files से context पढ़कर answer improve करता है।
-
-✔ HUD UI
-
-On-screen floating UI जो mic status और responses show करती है।
-
-✔ Console UI
-
-Debug mode के लिए lightweight terminal interface।
-
-📂 Project Structure
-jarvis assistant/
-│
-├── main.py                 # Entry point (wake-word + pipeline)
-│
-├── core/                   # AI brain, tools, memory, STT, TTS
-├── rag/                    # RAG engine + file readers
-├── ui/                     # HUD + Console
-├── agent/                  # Memory and tool engine
-├── audio/                  # Input/Output samples
-├── config/                 # Settings (API keys via .env)
-│
-├── requirements.txt        # Dependencies
-└── README.md               # Project documentation
-
-🔧 Installation
-1. Clone the repository
-git clone https://github.com/thevidyasagar/Assistant-jarvis.git
-cd Assistant-jarvis
-
-2. Create virtual environment
 python -m venv .venv
+source .venv/Scripts/activate
 
-3. Activate
 
-Windows:
+Install dependencies
 
-.venv\Scripts\activate
-
-4. Install dependencies
 pip install -r requirements.txt
 
-🔑 Environment Variables (Required)
 
-Create a file:
+Add your Porcupine keyword file (.ppn)
+Place it inside:
 
-config/.env
-
-
-Add inside:
-
-OPENAI_API_KEY=your_key_here
-GROQ_API_KEY=your_key_here
+core/wake_engine/
 
 
-⚠ यह फाइल GitHub पर push नहीं होनी चाहिए।
-यह .gitignore में already included है।
+Run the assistant
 
-▶️ Running Jarvis
 python main.py
 
-🧠 How It Works
+How It Works
 
-Wake-word listener audio capture शुरू करता है
+Porcupine listens for the wake word.
 
-Wake word मिलने पर STT engine text generate करता है
+Once triggered, the STT engine converts your speech to text.
 
-Core LLM query process करता है और plan बनाता है
+The command handler checks what you said and matches it with defined actions.
 
-Tools + memory engine tasks execute करते हैं
+The TTS engine replies with a natural voice.
 
-Output voice TTS के द्वारा बोलकर सुनाया जाता है
+Supported Commands
 
-HUD पर status दिखाया जाता है
+Examples you can include:
+• “Open YouTube”
+• “Search for JavaScript tutorials”
+• “What’s the time”
+• “Play music”
+• “Shutdown the system”
+You can add more commands by editing command_handler.py.
 
-🛠 Technologies Used
+Adding New Commands
 
-Python 3.10
+Inside command_handler.py, add a new function and map it to a keyword. For example:
 
-Porcupine Wake-Word
+if "calculator" in command:
+    open_calculator()
 
-Whisper STT
+Troubleshooting
 
-Edge-TTS
+• If Porcupine throws a keyword error, check your .ppn file platform.
+• If microphone is not detected, check audio input settings.
+• Windows DPI warning from Qt can be ignored or fixed using qt.conf.
 
-Groq / OpenAI LLM
+Future Scope
 
-PyQt6 for HUD UI
+• Full Jarvis-style animated UI
+• Wake word customization
+• Offline mode
+• Integration with home automation
+• Real-time system monitoring widgets
 
-RAG Engine
+License
 
-JSON Memory
-
-🤝 Contributing
-
-Pull requests welcome हैं।
-Large features पहले issue में discuss करें।
-
-📜 License
-
-MIT License.
+MIT License
